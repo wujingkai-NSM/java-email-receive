@@ -130,4 +130,3 @@ class ExtendedMailSessionProvider extends MailSessionProvider {
 - **Password Security**: Passwords are uniformly retrieved via the `getPassword()` method. The parent class has handled the password storage and access logic, so subclasses can directly call this method.  
 
 - **Compatibility**: Developed based on the Jakarta Mail 2.1 specification. Ensure that the corresponding version of the Jakarta Mail API is included in the project dependencies.
-> （注：文档部分内容可能由 AI 生成）
