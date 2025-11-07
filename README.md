@@ -119,7 +119,22 @@ class ExtendedMailSessionProvider extends MailSessionProvider {
 
 ```
 
-
+## Example
+```java
+MailReceiver.MailProcessCleaner a = YourMailReceiver.receive((messages) -> {
+			for (Message message : messages) {
+				MessageProcesser messageProcesser = new MessageProcesser(message);
+				try {
+					String mailContent = messageProcesser.getContent(); // Get content using MessageProcesser
+                    logger.info("E-mail ID：" + messageProcesser.getMessageID());
+					logger.info("Content：" + mailContent);
+				} catch (MessagingException | IOException e) {
+					throw new RuntimeException(e);
+				}
+			}
+			logger.info("Receive amount of email(s)：" + messages.length);
+		}, YourMailProvider);
+```
 
 ## Key Notes
 
